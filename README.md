@@ -1,5 +1,7 @@
 # Jeff Who?
 
+![Huh?](assets/who.png)
+
 Mostly pointless WebExtension compatible with Mozilla Firefox and Google Chrome that replaces "Jeff Bezos" with "Jeff Who?" on most webpages — along with a few other easter eggs.
 
 This extension should also support Microsoft Edge & Opera but it has not been tested with these browers. Issues to fix PRs welcome. 
