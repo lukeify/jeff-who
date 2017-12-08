@@ -83,9 +83,9 @@ var namespace = typeof browser !== 'undefined' ? browser : chrome;
      * Twitter.
      */
     var replaceTwitterBio = function() {
-        var bioElem = document.querySelector(".ProfileHeaderCard-bio.u-dir");
-        if (bioElem) {
-            bioElem.innerHTML = '<a href="https://www.youtube.com/watch?v=WG9EgxGsJuQ">https://www.youtube.com/watch?v=WG9EgxGsJuQ</a>';
+        var dropIt = document.querySelector(".ProfileHeaderCard-bio.u-dir");
+        if (dropIt) {
+            dropIt.innerHTML = '<a href="https://www.youtube.com/watch?v=WG9EgxGsJuQ">https://www.youtube.com/watch?v=WG9EgxGsJuQ</a>';
         }
     };
 

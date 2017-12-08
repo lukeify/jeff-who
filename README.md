@@ -4,7 +4,7 @@
 
 Mostly pointless WebExtension compatible with Mozilla Firefox and Google Chrome that replaces "Jeff Bezos" with "Jeff Who?" on most webpages — along with a few other easter eggs.
 
-This extension should also support Microsoft Edge & Opera but it has not been tested with these browers. Issues to fix PRs welcome. 
+This extension should also support Microsoft Edge & Opera but it has not been tested with these browers. Issues & PRs to fix bugs welcome. 
 
 ## Installation
 
@@ -19,6 +19,14 @@ https://blog.mozilla.org/addons/2015/12/23/loading-temporary-add-ons/
 ### Google Chrome
 
 https://developer.chrome.com/extensions/getstarted#unpacked
+
+### Microsoft Edge 
+
+https://docs.microsoft.com/en-us/microsoft-edge/extensions/guides/adding-and-removing-extensions
+
+### Opera
+
+https://dev.opera.com/extensions/testing/
 
 ## Notes
 
