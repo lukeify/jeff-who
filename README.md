@@ -8,13 +8,7 @@ This extension should also support Microsoft Edge & Opera but it has not been te
 
 ## Installation
 
-This extension is currently unsigned, and requires the user to install it manually. For instructions on how to do this, please read the documents below.
-
-It has been submitted for inclusion at addons.mozilla.org.
-
-### Mozilla Firefox
-
-https://blog.mozilla.org/addons/2015/12/23/loading-temporary-add-ons/
+Mozilla Firefox users can download a signed copy of this extension from [addons.mozilla.org](https://addons.mozilla.org/en-US/firefox/addon/jeff-who/). For instructions on how to manually install the unsigned extension from source in other browsers, please read the documents below.
 
 ### Google Chrome
 
