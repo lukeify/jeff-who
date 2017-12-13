@@ -5,26 +5,45 @@ var namespace = typeof browser !== 'undefined' ? browser : chrome;
     var globalData = {
         regexes: {
             who: /(Jeff(?:rey)?(?:[\s-])?(?:Preston[\s-])?)?(Bezos)('s?)?/gi,
-            bae: /(?:Elon\s)?Musk/gi,
+            bae: /(God[\s-]Emperor\s)?(?:Elon\s)?(?:Reeve\s)?Musk/gi,
             suborbital: /New\sShepard/gi
         },
         replacements: {
+            /**
+             *
+             * @param match
+             * @param p1
+             * @param p2
+             * @param p3
+             * @param offset
+             * @param string
+             *
+             * @returns {string}
+             */
             who: function(match, p1, p2, p3, offset, string) {
+                // Begin with an empty string.
                 var who = "";
-                if (p1 && p1.toLowerCase().indexOf("jeff") !== -1) {
+                // If we've found a match for some form of "Jeff", prepend it to the string.
+                if (p1) {
                     who += p1;
                 }
+                // If the first character of "bezos" is lowercase, replace it with a lowercase "who?".
                 who += p2[0] === "b" ? "who?" : "Who?";
+                // If p3 exists, we should pluralize the replacement
                 if (p3) {
                     who += "'s";
                 }
+                // return a result
                 return who;
             },
             bae: function(match, p1, offset, string) {
+                if (typeof p1 !== "undefined") {
+                    return match;
+                }
                 return "God Emperor " + match;
             },
             suborbital: function(match, offset, string) {
-                return "Suborbital New Shepherd";
+                return "Suborbital New Shepard";
             }
         }
     };
@@ -64,32 +83,6 @@ var namespace = typeof browser !== 'undefined' ? browser : chrome;
     };
 
     /**
-     * WaPo.
-     */
-    var replaceWapoLogo = function() {
-        var logoElem = document.querySelector("#mastnav-container .wplogo");
-        if (logoElem) {
-            logoElem.src = namespace.extension.getURL("images/wawho.png");
-            return;
-        }
-
-        var storyLogoElem = document.querySelector("#logo-in-nav .main-logo");
-        if (storyLogoElem) {
-            storyLogoElem.src = namespace.extension.getURL("images/wawho-white.png");
-        }
-    };
-
-    /**
-     * Twitter.
-     */
-    var replaceTwitterBio = function() {
-        var dropIt = document.querySelector(".ProfileHeaderCard-bio.u-dir");
-        if (dropIt) {
-            dropIt.innerHTML = '<a href="https://www.youtube.com/watch?v=WG9EgxGsJuQ">https://www.youtube.com/watch?v=WG9EgxGsJuQ</a>';
-        }
-    };
-
-    /**
      *
      */
     var replaceText = function() {
@@ -100,19 +93,6 @@ var namespace = typeof browser !== 'undefined' ? browser : chrome;
             }
         }
     };
-
-    /**
-     * Begin script execution.
-     */
-    if (window.location.href.indexOf("washingtonpost") !== -1) {
-        hasFoundWhoMatch = true;
-        replaceWapoLogo();
-    }
-
-    if (window.location.href.indexOf("twitter.com/jeffbezos") !== -1) {
-        hasFoundWhoMatch = true;
-        replaceTwitterBio();
-    }
 
     recurse(document.body);
     console.log(matchedNodes.length);

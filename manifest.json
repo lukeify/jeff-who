@@ -2,7 +2,7 @@
 	"author": "A SpaceX Fan",
 	"manifest_version": 2,
 	"name": "jeff-who",
-	"version": "1.0.0",
+	"version": "1.0.1",
 	"description": "Replaces Bezos with Jeff Who?",
 	"icons": {
 		"40": "icons/icon-40.png",
@@ -12,7 +12,19 @@
 	"content_scripts": [
 		{
 			"matches": ["*://*/*"],
-			"js": ["jeff-who.js"]
+			"js": ["src/jeff-who.js"]
+		},
+		{
+			"matches": ["https://en.wikipedia.org/wiki/Jeff_Bezos"],
+			"js": ["src/wikipedia.js"]
+		},
+		{
+			"matches": ["https://twitter.com/jeffbezos"],
+			"js": ["src/twitter.js"]
+		},
+		{
+			"matches": ["https://www.washingtonpost.com/*"],
+			"js": ["src/washington-post.js"]
 		}
 	],
 	"web_accessible_resources": [
