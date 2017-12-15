@@ -8,6 +8,7 @@ tests/*
 *.gitignore
 *.gitattributes
 *.ai
+*.psd
 
 assets/who.png
 exclude.lst

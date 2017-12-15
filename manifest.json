@@ -15,16 +15,20 @@
 			"js": ["src/jeff-who.js"]
 		},
 		{
-			"matches": ["https://en.wikipedia.org/wiki/Jeff_Bezos"],
+			"matches": ["https://en.wikipedia.org/wiki/Jeff_Bezos", "https://en.wikipedia.org/wiki/jeff_bezos", "https://en.wikipedia.org/wiki/Jeff_bezos", "https://en.wikipedia.org/wiki/jeff_Bezos"],
 			"js": ["src/wikipedia.js"]
 		},
 		{
-			"matches": ["https://twitter.com/jeffbezos"],
+			"matches": ["https://twitter.com/jeffbezos", "https://twitter.com/jeffBezos", "https://twitter.com/Jeffbezos", "https://twitter.com/JeffBezos"],
 			"js": ["src/twitter.js"]
 		},
 		{
 			"matches": ["https://www.washingtonpost.com/*"],
 			"js": ["src/washington-post.js"]
+		},
+		{
+			"matches": ["https://www.blueorigin.com/"],
+			"js": ["src/blue-origin.js"]
 		}
 	],
 	"web_accessible_resources": [
