@@ -1,0 +1,16 @@
+.git/*
+.idea/*
+node_modules/*
+tests/*
+
+*.DS_Store
+*.zip
+*.gitignore
+*.gitattributes
+*.ai
+
+assets/who.png
+exclude.lst
+LICENSE
+README.md
+package.json

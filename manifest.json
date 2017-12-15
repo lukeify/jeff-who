@@ -2,7 +2,7 @@
 	"author": "A SpaceX Fan",
 	"manifest_version": 2,
 	"name": "jeff-who",
-	"version": "1.0.1",
+	"version": "1.0.2",
 	"description": "Replaces Bezos with Jeff Who?",
 	"icons": {
 		"40": "icons/icon-40.png",

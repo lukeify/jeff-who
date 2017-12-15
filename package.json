@@ -1,0 +1,13 @@
+{
+  "name": "jeff-who",
+  "version": "1.0.2",
+  "description": "Replaces Bezos with Jeff Who?",
+  "main": "src/jeff-who.js",
+  "scripts": {
+    "zip": "zip -r dist.zip . -x@exclude.lst"
+  },
+  "repository": "https://github.com/lukeify/jeff-who.git",
+  "author": "Luke",
+  "license": "MIT",
+  "private": false
+}

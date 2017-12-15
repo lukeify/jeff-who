@@ -1,12 +1,17 @@
 # Jeff Who?
 
+[![Mozilla Add-on](https://img.shields.io/amo/v/jeff-who.svg)](https://addons.mozilla.org/en-US/firefox/addon/jeff-who/)
+[![Chrome Web Store](https://img.shields.io/chrome-web-store/v/iiniimpnoajeiekkfhlpdpcibaahcbpl.svg)](https://chrome.google.com/webstore/detail/jeff-who/iiniimpnoajeiekkfhlpdpcibaahcbpl) 
+[![license](https://img.shields.io/github/license/lukeify/jeff-who.svg)](https://github.com/lukeify/jeff-who)
+[![Twitter](https://img.shields.io/twitter/url/https/github.com/lukeify/jeff-who.svg?style=social)](https://twitter.com/intent/tweet?text=Wow:&url=https%3A%2F%2Fgithub.com%2Flukeify%2Fjeff-who)
+
 ![Huh?](assets/who.png)
 
-Mostly pointless WebExtension compatible with Mozilla Firefox and Google Chrome that replaces "Jeff Bezos" with "Jeff Who?" on most webpages — along with a few other easter eggs.
+Mostly pointless WebExtension compatible with Mozilla Firefox and Google Chrome that replaces "Jeff Bezos" (and permutations) with "Jeff Who?" on most webpages — along with a few other easter eggs.
 
 This extension should also support Microsoft Edge, Opera, & Vivaldi but it has not been tested with these browsers. Issues & PRs to fix bugs welcome.
 
-## Installation
+## User Installation
 
 ### Mozilla Firefox
 
@@ -27,6 +32,36 @@ The extension has not been published to the Opera extensions repository, however
 ### Safari
 
 At this time Safari does not support WebExtensions.
+
+## Getting Started
+
+For those who would like to improve, self-build, or fork this repository.
+
+### Prerequisites
+
+Ensure you have [Yarn package manager](https://yarnpkg.com/en/docs/install).
+
+### Installing
+
+```
+git clone https://github.com/lukeify/jeff-who.git
+yarn install
+```
+
+### Building
+
+Follow browser vendor-specific instructions on how to sideload the WebExtension to your browser.
+
+To produce an AMO & Chrome Webstore-ready zip of the extension:
+
+```
+yarn run zip
+```
+
+## Built with
+
+* JavaScript
+* Yarn Package Manager
 
 ## Notes
 
