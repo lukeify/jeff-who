@@ -19,7 +19,7 @@
 			"js": ["src/wikipedia.js"]
 		},
 		{
-			"matches": ["https://twitter.com/jeffbezos", "https://twitter.com/jeffBezos", "https://twitter.com/Jeffbezos", "https://twitter.com/JeffBezos"],
+			"matches": ["https://twitter.com/jeffbezos*", "https://twitter.com/jeffBezos*", "https://twitter.com/Jeffbezos*", "https://twitter.com/JeffBezos*"],
 			"js": ["src/twitter.js"]
 		},
 		{
