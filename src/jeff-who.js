@@ -16,7 +16,7 @@ var namespace = typeof browser !== 'undefined' ? browser : chrome;
         regexes: {
             who: /(Jeff(?:rey)?(?:[\s-])?(?:Preston[\s-])?)?(Bezos)('s?)?/gi,
             bae: /(God[\s-]Emperor\s)?(?:Elon\s)?(?:Reeve\s)?Musk/gi,
-            suborbital: /New\sShepard/gi
+            suborbital: /New\sShep(ard|herd)/gi
         },
 
         /**
