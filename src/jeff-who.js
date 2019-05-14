@@ -1,26 +1,40 @@
 // jeff-who.js
+
+// This namespace declaration is used for browsers which don't support the browser global object.
+//
+// "The chrome global variable is only available on Chrome, Chromium, Opera, Vivaldi and maybe a few others.
+// On Firefox or Edge, the add-on API should be invoked with the browser global."
+//
+// See more: https://discourse.mozilla.org/t/chrome-is-not-defined/20938
 var namespace = typeof browser !== 'undefined' ? browser : chrome;
 
 (function() {
     var globalData = {
+        /**
+         * Define the regexes for which to search content for.
+         */
         regexes: {
             who: /(Jeff(?:rey)?(?:[\s-])?(?:Preston[\s-])?)?(Bezos)('s?)?/gi,
             bae: /(God[\s-]Emperor\s)?(?:Elon\s)?(?:Reeve\s)?Musk/gi,
             suborbital: /New\sShepard/gi
         },
+
+        /**
+         * Define the replacement functions we call when a regex is matched.
+         */
         replacements: {
             /**
+             * Replacement function to switch "Jeff Bezos" and various permutations, to
+             * "Jeff Who?" and various permutations.
              *
-             * @param match
-             * @param p1
-             * @param p2
-             * @param p3
-             * @param offset
-             * @param string
+             * @param {string} match - The whole match.
+             * @param {string} p1 - A match for "Jeff", or "Jeffrey".
+             * @param {string} p2 - A match for "Bezos".
+             * @param {string} p3 - A match for a possessive attached to "Bezos".
              *
-             * @returns {string}
+             * @returns {string} The replaced text.
              */
-            who: function(match, p1, p2, p3, offset, string) {
+            who: function(match, p1, p2, p3) {
                 // Begin with an empty string.
                 var who = "";
                 // If we've found a match for some form of "Jeff", prepend it to the string.
@@ -28,7 +42,7 @@ var namespace = typeof browser !== 'undefined' ? browser : chrome;
                     who += p1;
                 }
                 // If the first character of "bezos" is lowercase, replace it with a lowercase "who?".
-                who += p2[0] === "b" ? "who?" : "Who?";
+                who += p2.charAt(0) === "b" ? "who?" : "Who?";
                 // If p3 exists, we should pluralize the replacement
                 if (p3) {
                     who += "'s";
@@ -36,19 +50,40 @@ var namespace = typeof browser !== 'undefined' ? browser : chrome;
                 // return a result
                 return who;
             },
-            bae: function(match, p1, offset, string) {
+
+            /**
+             * Replacement function for "Elon Musk", switches text to "God Emporer Elon Musk".
+             *
+             * @param {string} match - The full match.
+             * @param {string} p1 - A match for the prefix "God Emporer".
+             *
+             * @returns {string} The replaced text.
+             */
+            bae: function(match, p1) {
+                // If the match is already prefixed with "god emporer", we don't need to do anything.
                 if (typeof p1 !== "undefined") {
                     return match;
                 }
                 return "God Emperor " + match;
             },
-            suborbital: function(match, offset, string) {
+
+            /**
+             * Replacement function for "New Shepard", switches text to add "Suborbital" as a prefix.
+             */
+            suborbital: function() {
                 return "Suborbital New Shepard";
             }
         }
     };
 
+    /**
+     * The nodes in the current document which have a match.
+     */
     var matchedNodes = [];
+
+    /**
+     * Boolean for whether a match has been found on the current page.
+     */
     var hasFoundWhoMatch = false;
 
     /**
@@ -83,13 +118,16 @@ var namespace = typeof browser !== 'undefined' ? browser : chrome;
     };
 
     /**
-     *
+     * If the page has a match for Jeff Bezos, replace the found nodes with the replacement text.
      */
     var replaceText = function() {
         if (hasFoundWhoMatch) {
             for (var i = 0; i < matchedNodes.length; i++) {
                 var currentMatch = matchedNodes[i];
-                currentMatch.node.textContent = currentMatch.node.textContent.replace(globalData.regexes[currentMatch.type], globalData.replacements[currentMatch.type]);
+                currentMatch.node.textContent = currentMatch.node.textContent.replace(
+                    globalData.regexes[currentMatch.type],
+                    globalData.replacements[currentMatch.type]
+                );
             }
         }
     };

@@ -1,3 +1,7 @@
+/**
+ * On Jeff Bezos' Wikipedia page, replace the International Phonetic Indicator a pronounciation of "Bezos"
+ * to a pronounciation of "Who".
+ */
 var replace__wikipedia = function() {
     var ipa = document.querySelector('[title="Help:IPA/English"]');
     if (ipa) {

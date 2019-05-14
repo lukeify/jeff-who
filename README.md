@@ -1,7 +1,7 @@
 # Jeff Who?
 
 [![Mozilla Add-on](https://img.shields.io/amo/v/jeff-who.svg)](https://addons.mozilla.org/en-US/firefox/addon/jeff-who/)
-[![Chrome Web Store](https://img.shields.io/chrome-web-store/v/iiniimpnoajeiekkfhlpdpcibaahcbpl.svg)](https://chrome.google.com/webstore/detail/jeff-who/iiniimpnoajeiekkfhlpdpcibaahcbpl) 
+[![Chrome Web Store](https://img.shields.io/chrome-web-store/v/iiniimpnoajeiekkfhlpdpcibaahcbpl.svg)](https://chrome.google.com/webstore/detail/jeff-who/iiniimpnoajeiekkfhlpdpcibaahcbpl)
 [![license](https://img.shields.io/github/license/lukeify/jeff-who.svg)](https://github.com/lukeify/jeff-who)
 [![Twitter](https://img.shields.io/twitter/url/https/github.com/lukeify/jeff-who.svg?style=social)](https://twitter.com/intent/tweet?text=Wow:&url=https%3A%2F%2Fgithub.com%2Flukeify%2Fjeff-who)
 
@@ -23,11 +23,11 @@ This extension should also support Microsoft Edge, Opera, & Vivaldi but it has n
 
 ### Microsoft Edge
 
-Microsoft requires explicit permission to publish signed extensions in the Edge extension store. For installation instructions on how to install the unsigned extension, please read https://docs.microsoft.com/en-us/microsoft-edge/extensions/guides/adding-and-removing-extensions
+Microsoft requires explicit permission to publish signed extensions in the Edge extension store. For installation instructions on how to install the unsigned extension, please read [https://docs.microsoft.com/en-us/microsoft-edge/extensions/guides/adding-and-removing-extensions](https://docs.microsoft.com/en-us/microsoft-edge/extensions/guides/adding-and-removing-extensions)
 
 ### Opera
 
-The extension has not been published to the Opera extensions repository, however it will be submitted in the future. For installation instructions on how to install the unsigned extension, please read https://dev.opera.com/extensions/testing/
+The extension has not been published to the Opera extensions repository, however it will be submitted in the future. For installation instructions on how to install the unsigned extension, please read [https://dev.opera.com/extensions/testing/](https://dev.opera.com/extensions/testing/)
 
 ### Safari
 
@@ -43,7 +43,7 @@ Ensure you have [Yarn package manager](https://yarnpkg.com/en/docs/install).
 
 ### Installing
 
-```
+```bash
 git clone https://github.com/lukeify/jeff-who.git
 yarn install
 ```
@@ -54,7 +54,7 @@ Follow browser vendor-specific instructions on how to sideload the WebExtension 
 
 To produce an AMO & Chrome Webstore-ready zip of the extension:
 
-```
+```bash
 yarn run zip
 ```
 
