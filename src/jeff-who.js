@@ -1,13 +1,5 @@
 // jeff-who.js
 
-// This namespace declaration is used for browsers which don't support the browser global object.
-//
-// "The chrome global variable is only available on Chrome, Chromium, Opera, Vivaldi and maybe a few others.
-// On Firefox or Edge, the add-on API should be invoked with the browser global."
-//
-// See more: https://discourse.mozilla.org/t/chrome-is-not-defined/20938
-var namespace = typeof browser !== 'undefined' ? browser : chrome;
-
 (function() {
     var globalData = {
         /**
@@ -133,6 +125,21 @@ var namespace = typeof browser !== 'undefined' ? browser : chrome;
     };
 
     recurse(document.body);
-    console.log(matchedNodes.length);
+
+    browser.runtime.sendMessage({
+        type: 'isDevelopment'
+    }).then(function(isDevPromise) {
+        return isDevPromise;
+    }).then(function(isDevelopment) {
+        if (isDevelopment) {
+            var jeffsWhod = matchedNodes.filter(function(mn) { return mn.type === 'who' });
+            var elonsMusked = matchedNodes.filter(function(mn) { return mn.type === 'bae' });
+            var bluesOrigined = matchedNodes.filter(function(mn) { return mn.type === 'suborbital' });
+            console.log(`${jeffsWhod.length} Jeffs Who'd, ${elonsMusked.length} Elons Musked, ${bluesOrigined.length} Blues Origined.`);
+        }
+    }).catch(function(error) {
+        console.log(error);
+    });
+
     replaceText();
 })();

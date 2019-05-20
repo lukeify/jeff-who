@@ -12,7 +12,7 @@ var replace__washingtonpost = function() {
 
         // Create and append our image.
         var imgNode = document.createElement("img");
-        imgNode.src = namespace.extension.getURL("images/wawho.png");
+        imgNode.src = browser.extension.getURL("images/wawho.png");
         imgNode.alt = "Who?";
         logoNode.appendChild(imgNode);
 
@@ -30,7 +30,7 @@ var replace__washingtonpost = function() {
 
         // Create and append an image.
         var imgNode = document.createElement("img");
-        imgNode.src = namespace.extension.getURL("images/wawho-white.png");
+        imgNode.src = browser.extension.getURL("images/wawho-white.png");
         imgNode.alt = "The story is sponsored by Blue Origin.";
         imgNode.style.width = "50%";
         storyLogoNode.prepend(imgNode);

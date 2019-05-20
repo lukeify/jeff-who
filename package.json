@@ -1,6 +1,6 @@
 {
   "name": "jeff-who",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Replaces Bezos with Jeff Who?",
   "main": "src/jeff-who.js",
   "scripts": {
@@ -9,5 +9,9 @@
   "repository": "https://github.com/lukeify/jeff-who.git",
   "author": "Luke",
   "license": "MIT",
-  "private": false
+  "private": false,
+  "dependencies": {},
+  "devDependencies": {
+    "webextension-polyfill": "^0.4.0"
+  }
 }
